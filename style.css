@@ -1,67 +1,126 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: #0f0f13;
   color: #eee;
+  padding-top: 60px; /* To prevent content from hiding under navbar */
 }
-.btn { padding: .75rem 1.5rem; border: none; cursor: pointer; margin-right: 1rem; }
-.primary { background: #ff6e3a; color: white; }
-.outline { border: 2px solid #ff6e3a; color: #ff6e3a; background: transparent; }
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.primary {
+  background: #ff6e3a;
+  color: white;
+}
+.outline {
+  border: 2px solid #ff6e3a;
+  color: #ff6e3a;
+  background: transparent;
+}
 .hero {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 4rem 8%;
 }
-.hero-left h2 { font-size: 1.5rem; color: #aaa; margin-bottom: .5rem; }
-.hero-left h1 { font-size: 3rem; margin-bottom: 1rem; }
-.skills-bar { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.hero-left h2 {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+.hero-left h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.skills-bar {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .skills-bar span {
-  background: rgba(255, 110, 58, .2);
-  padding: .5rem 1rem;
+  background: rgba(255, 110, 58, 0.2);
+  padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 .hero-right .avatar-container {
-  position: relative; width: 250px; height: 250px;
+  position: relative;
+  width: 250px;
+  height: 250px;
 }
 .avatar-container img {
-  width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
   border: 4px solid #ff6e3a;
 }
 .glow-ring {
-  position: absolute; top: -10px; left: -10px;
-  width: calc(100% + 20px); height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   border-radius: 50%;
-  box-shadow: 0 0 30px 10px rgba(255,110,58,.6);
+  box-shadow: 0 0 30px 10px rgba(255, 110, 58, 0.6);
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%,100% { transform: scale(1); opacity: .7; }
-  50% { transform: scale(1.05); opacity: 1; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 }
 .about {
-  display: flex; gap: 4rem; align-items: center;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
   padding: 4rem 8%;
 }
 .about-icons {
-  display: flex; flex-direction: column; gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .about-icons div {
-  display: flex; align-items: center; gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.about-icons img { width: 40px; }
+.about-icons img {
+  width: 40px;
+}
 .stats {
-  display: flex; gap: 2rem; margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
 }
-.stats div h3 { font-size: 2rem; color: #ff6e3a; }
+.stats div h3 {
+  font-size: 2rem;
+  color: #ff6e3a;
+}
 .projects {
   padding: 4rem 8%;
 }
-.project{
-    text-decoration: none;
+.project {
+  text-decoration: none;
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -69,31 +128,105 @@ body {
   background: #1a1a24;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,.5);
-  transition: transform .3s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
 }
-.project-card:hover { transform: translateY(-5px); }
-.project-card h3 { margin-bottom: .5rem; color: #ff6e3a; }
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #ff6e3a;
+}
 .project-card a {
-  display: inline-block; margin-top: 1rem;
-  color: #0ff; text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0ff;
+  text-decoration: none;
 }
-@media(max-width: 900px) {
-  .hero { flex-direction: column-reverse; text-align: center; }
-  .hero-right { margin-bottom: 2rem; }
-  .about { flex-direction: column; }
+a {
+  text-decoration: none;
+}
+.navbar {
+  width: 100%;
+  background: #181818;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+}
+.nav-logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  margin-right: 4rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.nav-links li a:hover {
+  color: #00ffe7;
+}
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-right {
+    margin-bottom: 2rem;
+  }
+  .about {
+    flex-direction: column;
+  }
 }
 .about-icons i {
-    font-size: 2rem;
-    color: #ff6e3a;
-    transition: transform 0.3s ease;
-  }
-  .about-icons i:hover {
-    transform: scale(1.2);
-    color: #0ff;
-  }
-  #title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
+  font-size: 2rem;
+  color: #ff6e3a;
+  transition: transform 0.3s ease;
+}
+.about-icons i:hover {
+  transform: scale(1.2);
+  color: #0ff;
+}
+#title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+#resume-btn {
+  background: #0ff;
+  color: #000;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+.hero-title {
+  font-size: 2.5rem;
+  color: #ff6e3a;
+  margin-bottom: 1rem;
+}
