@@ -56,6 +56,9 @@ body {
 .projects {
   padding: 4rem 8%;
 }
+.project{
+    text-decoration: none;
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
@@ -80,3 +83,17 @@ body {
   .hero-right { margin-bottom: 2rem; }
   .about { flex-direction: column; }
 }
+.about-icons i {
+    font-size: 2rem;
+    color: #ff6e3a;
+    transition: transform 0.3s ease;
+  }
+  .about-icons i:hover {
+    transform: scale(1.2);
+    color: #0ff;
+  }
+  #title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
