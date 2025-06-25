@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Lionel Zodiac | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <h2>Hello, I’m <span id="name">Lionel</span></h2>
+      <h1 id="title">Software Developer</h1>
+      <div class="cta">
+        <a href="#projects" class="btn primary">My Projects</a>
+        <a id="resumeBtn" target="_blank" class="btn outline">Resume</a>
+      </div>
+      <div class="skills-bar" id="skills"></div>
+    </div>
+    <div class="hero-right">
+      <div class="avatar-container">
+        <img id="avatar" src="" alt="Lionel Zodiac" />
+        <div class="glow-ring"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-icons">
+      <div><img src="icons/web.svg" alt="Web"/><p>Web Dev</p></div>
+      <div><img src="icons/app.svg" alt="App"/><p>App Dev</p></div>
+      <div><img src="icons/hosting.svg" alt="Hosting"/><p>Hosting</p></div>
+    </div>
+    <div class="about-text">
+      <h2>About me</h2>
+      <p id="bio"></p>
+      <div class="stats">
+        <div><h3 id="projects-count">0</h3><p>Completed Projects</p></div>
+        <div><h3>95%</h3><p>Client Satisfaction</p></div>
+        <div><h3>10+</h3><p>Years Experience</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid" id="projects-list"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
