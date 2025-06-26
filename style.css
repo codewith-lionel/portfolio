@@ -230,3 +230,13 @@ a {
   color: #ff6e3a;
   margin-bottom: 1rem;
 }
+.techstack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  margin-left: 115.200px;
+}
+.tech-stack {
+  margin-left: 115.200px;
+}
