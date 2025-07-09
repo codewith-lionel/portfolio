@@ -1,3 +1,7 @@
+
+const username = "codewith-lionel"; // Or any other GitHub username
+fetchGithub();
+
 async function fetchGithub() {
   try {
     const res = await fetch(`https://api.github.com/users/${username}`);
