@@ -1,4 +1,4 @@
-const username = "lionel-zodiac";
+const username = "codewith-lionel";
 
 async function fetchGithub() {
   const res = await fetch(`https://api.github.com/users/${username}`);
