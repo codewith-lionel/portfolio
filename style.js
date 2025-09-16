@@ -1,4 +1,4 @@
-const username = "codewith-lionel";
+let username = "codewith-lionel";
 const excludeRepo = "codewith-lionel"; // Change this to your portfolio repo name if different
 
 async function fetchGithub() {
@@ -7,10 +7,10 @@ async function fetchGithub() {
     if (!res.ok) throw new Error("User not found");
     const user = await res.json();
 
-    // Update UI (remove GitHub bio update)
+    // Update UI
     document.getElementById("avatar").src = user.avatar_url;
     document.getElementById("name").textContent = user.name || user.login;
-    // document.getElementById("bio").textContent = user.bio || ""; // <-- Remove this line
+    // document.getElementById("bio").textContent = user.bio || ""; // Remove if you want static bio
     document.getElementById("resumeBtn").href = user.blog || user.html_url;
 
     const reposRes = await fetch(
@@ -67,6 +67,14 @@ async function fetchGithub() {
   }
 }
 
+// Function to update username and reload projects
+function updateGithub() {
+  const input = document.getElementById("github-username");
+  username = input.value.trim() || "codewith-lionel";
+  fetchGithub();
+}
+
+// Initial fetch
 fetchGithub();
 
 document.querySelectorAll("section").forEach((section) => {
