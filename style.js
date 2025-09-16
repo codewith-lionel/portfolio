@@ -1,5 +1,7 @@
 let username = "codewith-lionel";
-const excludeRepo = "codewith-lionel"; // Change this to your portfolio repo name if different
+const excludeRepo = "codewith-lionel";
+const RESUME_URL =
+  "https://drive.google.com/file/d/1J6PX9RK6P_kymoVIed2hG1uR5tuXAMYB/view?usp=sharing";
 
 async function fetchGithub() {
   try {
@@ -10,8 +12,15 @@ async function fetchGithub() {
     // Update UI
     document.getElementById("avatar").src = user.avatar_url;
     document.getElementById("name").textContent = user.name || user.login;
-    // document.getElementById("bio").textContent = user.bio || ""; // Remove if you want static bio
-    document.getElementById("resumeBtn").href = user.blog || user.html_url;
+    // keep your static bio (don't overwrite from GitHub)
+    // set resume link only if element exists — do NOT overwrite manual Drive link if present
+    const resumeEl = document.getElementById("resumeBtn");
+    if (resumeEl) {
+      // prefer explicit RESUME_URL (Drive) — fallback to user's blog/github page
+      resumeEl.href = RESUME_URL || user.blog || user.html_url;
+      resumeEl.target = "_blank";
+      resumeEl.rel = "noopener noreferrer";
+    }
 
     const reposRes = await fetch(
       `https://api.github.com/users/${username}/repos?sort=updated`
@@ -87,4 +96,15 @@ document.querySelectorAll("section").forEach((section) => {
   };
   window.addEventListener("scroll", reveal);
   reveal();
+});
+
+// fallback click handler to ensure resume opens in a new tab
+document.addEventListener("click", (e) => {
+  const el = e.target.closest("#resumeBtn, #nav-resume");
+  if (!el) return;
+  const href = el.getAttribute("href");
+  if (!href) return;
+  // stop other handlers and open explicitly
+  e.preventDefault();
+  window.open(href, "_blank", "noopener,noreferrer");
 });
